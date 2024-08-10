@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+:root {
+    font-size: 62.5%;
+    --primaryFont: 'DM Sans', sans-serif;
+    --charSpace: 6px; 
+    --primaryColor: #3e4152;
+    --secondaryColor: #fafbfc;
+}
+
+body {
+    font-family: var(--primaryFont);
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+.slider {
+    width: 100%;
+    height: 45rem;
+    overflow: hidden;
+}
+
+.slides {
+    width: 500%;
+    height: 100%;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 800ms ease;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#flatdiscount {
+    position: fixed;
+    right: 0;
+    bottom: 13rem;
+    width: 5rem;
+    height: 25rem;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    background-color: #535766;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+#sidePanel {
+    font-size: 3rem;
+    color: #fcfcfc;
+}
+
+#flatdiscount > h1 {
+    writing-mode: vertical-lr;
+    height: 20rem;
+    text-align: center;
+    margin: auto;
+    font-size: 2rem;
+    font-weight: bolder;
+    color: #fcfcfc;
+}
+
+body > h1 {
+    margin: 5rem 2.5rem;
+    margin-top: 8rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: var(--charSpace);
+}
+
+#adDiv {
+    margin-top: 5rem;
+}
+
+#deals, 
+#top, 
+#categories, 
+#dealsTop, 
+#unmissable, 
+#colours, 
+#topInfluencers, 
+#budget, 
+#trending {
+    width: 100%;
+    padding: 5rem;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: repeat(6, auto);
+}
+
+#best {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(6, auto);
+}
+
+#colours {
+    grid-template-columns: repeat(4, auto);
+}
+
+@media only screen and (min-width: 551px) and (max-width: 850px) {
+    .slider {
+        height: 25rem;
+    }
+
+    .navigation-manual {
+        margin-top: 2.5rem;
+    }
+
+    #deals, #best, #top, #categories, #dealsTop, #unmissable, #budget, #trending {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    #colours {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+
+    #topInfluencers {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+@media all and (max-width: 550px) {
+    .slider {
+        height: 25rem;
+    }
+
+    #deals, #best, #top, #categories, #dealsTop, #unmissable, #budget, #trending {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+
+    #deals img {
+        width: 85%;
+        display: block;
+        margin: auto;
+    }
+
+    #deals > div:nth-child(7) {
+        display: none;
+    }
+
+    #unmissable {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #colours {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+
+    #topInfluencers {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
