@@ -13,6 +13,7 @@ body {
     scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .slider {
@@ -44,6 +45,7 @@ body {
 
 #flatdiscount {
     position: fixed;
+    z-index: 10;
     right: 0;
     bottom: 13rem;
     width: 5rem;
@@ -68,6 +70,7 @@ body {
     font-size: 2rem;
     font-weight: bolder;
     color: #fcfcfc;
+    
 }
 
 body > h1 {
@@ -92,11 +95,21 @@ body > h1 {
 #budget, 
 #trending {
     width: 100%;
-    padding: 5rem;
     display: grid;
-    gap: 4rem;
-    grid-template-columns: repeat(6, auto);
+    gap: 1rem;
+    grid-template-columns: repeat(6, minmax(200px, 1fr));
+    align-items: left;
+    padding-right: 1rem;
+    
 }
+#deals img{
+    height: 380px;
+    width: 250px;
+    object-fit: cover;
+    max-width: 100%;
+    transform: translateX(-4rem)
+}
+
 
 #best {
     width: 100%;
@@ -104,7 +117,23 @@ body > h1 {
     display: grid;
     gap: 0;
     grid-template-columns: repeat(6, auto);
+    transform: translateX(-5.5rem);
+
 }
+#best img{
+    height: 420px;
+    width: 350px;
+    object-fit: cover;
+    max-width: 100%;
+}
+#categories img{
+    height: 380px;
+    width: 380px;
+    object-fit: cover;
+    max-width: 100%;
+    transform: translateX(-5rem)
+}
+
 
 #colours {
     grid-template-columns: repeat(4, auto);
