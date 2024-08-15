@@ -15,92 +15,295 @@ body {
     padding: 0;
 }
 
-#navbar {
-    background-color: #ffffff;
-    font-family: Whitney, sans-serif;
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-sizing: border-box;
-    padding: 35px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    color: #545766;
-    font-weight: 700;
+.menu-bar {
+  /* background: white;
+  text-align: center;
+  display: inline; */
+  
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: white;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  box-sizing: inherit;
+  height: 80px;
 }
-
-#myntraIcon {
-    height: 60px;
-    width: 60px;
+.menu-bar ul {
+  display: inline-flex;
+  list-style: none;
+  height: fit-content;
+  width: max-content;
+  
 }
-
-#searchbar {
-    display: flex;
-    width: 30%;
-    background-color: #f5f5f6;
-    color: gray;
-    text-align: center;
-    box-sizing: border-box;
-    border-radius: 5px;
-    justify-content: space-evenly;
-}
-
-#searchbar:hover {
-    background-color: #ffffff;
-}
-
-#magGlass {
-    padding: 1rem;
-}
-
-#profile, #wishlist, #bag {
-    text-align: center;
-    color: #6c2632;
-}
-
-#profile > p, #wishlist > p, #bag > p {
-    margin-top: 0;
-    font-size: 1.2rem;
-    color: #000000;
-}
-
-#profile > a > i, #wishlist > a > i, #bag > a > i {
-    color: gray;
-}
-
-img ~ a > div {
-    color: #000000;
-}
-
-a:link, a:visited {
-    text-decoration: none;
-    color: inherit;
+.menu-bar ul li {
+  width: 80px;
+  margin: 15px;
+  padding: 15px;
+  margin-right: 0%;
+  font-weight: 500;
+  font-size: 16px;
+  
 }
 
 input {
-    background-color: transparent;
-    border: none;
-    height: 40px;
-    width: 90%;
-    color: #cccccc;
+  height: 50px;
+  margin-top: 25px;
+  margin-left: 90px;
+  width: 330px;
+  padding: 3px 7px;
 }
-
-textarea:focus, input:focus {
-    outline: none;
-}
-
-i {
-    font-size: 2rem;  
-}
-
 img {
-    width: 100%;
+  height: 60px;
+  width: 60px;
+  margin-top: 11px;
+  margin-left: 55px;
+  margin-right: 7rem;
+}
+.menu-bar ul li a {
+  text-decoration: none;
+  color: rgb(114, 114, 114);
+}
+.sub-menu-1 {
+  display: none;
+  font-weight: bold;
+}
+.menHover:hover {
+  border-bottom: 4px solid rgb(238, 0, 119);
+}
+.menHover2:hover {
+  border-bottom: 4px solid rgb(241, 106, 174);
+}
+.menHover3:hover {
+  border-bottom: 4px solid orangered;
+}
+.menHover4:hover {
+  border-bottom: 4px solid gold;
+}
+.menHover5:hover {
+  border-bottom: 4px solid rgb(78, 170, 240);
+}
+.menHover6:hover {
+  border-bottom: 4px solid saddlebrown;
+
+}
+.menu-bar ul li:hover .sub-menu-1 {
+  display: flex;
+  position: absolute;
+  margin-top: 30px;
+  font-weight: 300;
+  font-size: 12px;
+  background-color: rgb(255, 255, 255);
+}
+.menu-bar ul li:hover .sub-menu-1 ul {
+  display: block;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li {
+  width: 150px;
+  padding: 1px 5px;
+  background: transparent;
+  text-align: left;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li a h4 {
+  color: rgb(238, 0, 119);
+}
+ul > li:nth-child(5) {
+  height: fit-content;
+  width: max-content;
 }
 
-/* TOGGLE BAR */
-.bx {
-    font-size: 3.5rem;
+.pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--primaryColor);
+  text-align: center;
+  margin-right: 2rem;
+  margin-left: 8rem;
+  
+}
+.pro > img {
+  height: 24px;
+  width: 24px;
+  margin-bottom: 0.5rem;
+  margin-left: 7rem;
+  
+}
+.pro > span {
+  font-size: 1.2rem;
+  color: #3e4152;
+  padding-left: 0rem;
+  position: relative;
+  text-align: left;
+}
+#Profile-Div {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.profile-dropdown-hover:hover{
+  position: absolute;
+  top: 120%; /* Adjust to position the dropdown below the profile */
+  left: -50px; /* Align to the center of the profile icon */
+  width: 300px;
+  height: 316px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 1.5rem;
+  display: none;
+  z-index: 1000;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.pro:hover #profile-dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+.dropdown-welcome h3 {
+  font-size: 1.6rem;
+  color: #3e4152;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-welcome p {
+  font-size: 1.6rem;
+  color: #3e4152;
+  margin-bottom: 0.5rem;
+  margin-top: 95px; /* Keeps the paragraph closer to the heading */
+
+}
+#logbtn {
+  width: 100%;
+  background-color: #ff3f6c;
+  color: white;
+  padding: 1rem 0;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#logbtn:hover {
+  background-color: #e50050;
+}
+
+
+#bag {
+  margin-left: 52px;
+}
+.icon {
+  padding-left: 25px;
+  background: url("file:///C:/Users/Admin/Downloads/search_FILL0_wght400_GRAD0_opsz48.svg")
+    no-repeat left;
+  background-size: 20px;
+  height: 35px;
+
+  border: none;
+  background-color: #f5f5f6;
+}
+
+
+.studio-new{
+  color:#ff4e78;
+ padding: 5px;
+font-size:xx-small ;
+}
+.bottomWear{
+  background-color:rgb(250, 250, 250);
+}
+#std{
+  height: 600px;
+ width: 100%;
+ margin: auto;
+}
+#studioDiv{
+  width: 500px;
+  
+}
+/* General Styles for larger screens */
+@media (min-width: 1024px) {
+  /* Styles for large screens */
+  .menu-bar ul li {
+    font-size: 16px;
+  }
+  
+  input {
+    width: 330px;
+  }
+  
+  #studioDiv {
+    width: 500px;
+  }
+}
+
+/* Styles for tablets (between 768px and 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .menu-bar ul li {
+    font-size: 14px;
+    padding: 10px;
+    margin: 10px;
+  }
+
+  input {
+    width: 250px;
+    margin-left: 50px;
+  }
+
+  .pro {
+    margin-left: 4rem;
+  }
+
+  img {
+    margin-right: 4rem;
+  }
+}
+
+/* Styles for mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .menu-bar {
+    height: auto;
+    padding: 10px;
+  }
+
+  .menu-bar ul {
+    display: block;
+    text-align: center;
+  }
+
+  .menu-bar ul li {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  input {
+    width: 200px;
+    margin: 10px auto;
+  }
+
+  img {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .pro {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #studioDiv {
+    width: 100%;
+  }
 }
